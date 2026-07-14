@@ -1,6 +1,6 @@
 const BASE_URL = "https://api.themoviedb.org/3";
 
-export async function api(path: string) {
+export async function api<T>(path: string): Promise<T> {
   const response = await fetch(`${BASE_URL}${path}`, {
     headers: {
       Authorization: `Bearer ${process.env.TMDB_API_TOKEN}`,
@@ -9,7 +9,7 @@ export async function api(path: string) {
   });
 
   if (!response.ok) {
-    throw new Error("Erro na API");
+    throw new Error("API error");
   }
 
   return response.json();

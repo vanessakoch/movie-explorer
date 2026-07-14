@@ -2,8 +2,12 @@ import { api } from "./api";
 import { Movie } from "@/types/movie";
 import { PaginatedResponse } from "@/types/api";
 
-export async function getTrendingMovies(): Promise<PaginatedResponse<Movie>> {
-  return api("/trending/movie/week");
+export async function getTrendingMovies(): Promise<Movie[]> {
+  const response = await api<PaginatedResponse<Movie>>(
+    "/trending/movie/week"
+  );
+
+  return response.results;
 }
 
 export function searchMovies(query: string) {

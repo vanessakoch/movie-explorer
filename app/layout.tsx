@@ -16,7 +16,13 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body>
         <Header />
-        {children}
+          <div className="
+            min-h-screen
+            bg-linear-to-b
+            from-zinc-900
+            to-black">
+            {children}
+          </div>
       </body>
     </html>
   );

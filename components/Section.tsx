@@ -5,9 +5,11 @@ interface SectionProps {
 
 export function Section({ title, children }: SectionProps) {
   return (
-    <section className="mt-12">
-      <h2 className="mb-6 text-3xl font-bold">{title}</h2>
-      {children}
+    <section className="flex mt-5 items-center gap-2 text-xl font-extrabold sm:text-2xl">
+      <span className="rounded-lg bg-orange-500/20 p-2">
+        {children}
+      </span>
+      {title}
     </section>
   );
 }
