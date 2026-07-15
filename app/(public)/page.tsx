@@ -1,14 +1,18 @@
 import { Carousel } from "@/components/Carousel";
 import { MovieCard } from "@/components/MovieCard";
 import { Section } from "@/components/Section";
-import { getTrendingMovies } from "@/services/tmdb";
+import { getNewMovies, getPopularMovies, getTopRatedMovies, getTrendingMovies } from "@/services/tmdb";
 import { Star, Flame, Trophy, Calendar } from "lucide-react";
 
 export default async function Home() {
-  const movies = await getTrendingMovies();
+  const trendingMovies = await getTrendingMovies();
+  const popularMovies = await getPopularMovies();
+  const topRatedMovies = await getTopRatedMovies();
+  const nowPlayingMovies = await getNewMovies();
 
   return (
     <main className="mx-auto max-w-7xl p-6">
+
       <Section title="Em alta">
           <Flame
             className="
@@ -20,7 +24,7 @@ export default async function Home() {
           />        
       </Section>
       <Carousel>
-        {movies.map((movie) => (
+        {trendingMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Carousel>
@@ -36,7 +40,7 @@ export default async function Home() {
           />     
       </Section>
       <Carousel>
-        {movies.map((movie) => (
+        {popularMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Carousel>
@@ -52,7 +56,7 @@ export default async function Home() {
           />     
       </Section>
       <Carousel>
-        {movies.map((movie) => (
+        {topRatedMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Carousel>
@@ -68,7 +72,7 @@ export default async function Home() {
           />     
       </Section>
       <Carousel>
-        {movies.map((movie) => (
+        {nowPlayingMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Carousel>

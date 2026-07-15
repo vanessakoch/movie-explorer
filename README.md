@@ -10,6 +10,7 @@ Aplicação para buscar filmes usando a API do TMDB.
 
 ## Funcionalidades
 
-- Buscar filmes
+- Lista de filmes mais avaliados, últimos lançamentos, filmes populares
+- Busca de filmes
 - Ver detalhes
 - Favoritar filmes
