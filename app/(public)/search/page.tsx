@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import { MovieCard } from "@/components/MovieCard";
 import { searchMovies } from "@/services/tmdb";
 
@@ -11,7 +12,7 @@ export default async function SearchPage({ searchParams }: Props) {
   const { q } = await searchParams;
 
   if (!q) {
-    return <p>Nenhum termo informado.</p>;
+    return
   }
 
   const movies = await searchMovies(q);
@@ -19,7 +20,8 @@ export default async function SearchPage({ searchParams }: Props) {
   if (movies.length === 0 || !movies.length) {
     return (
       <main className="mx-auto max-w-7xl px-4 py-8">
-        <h1 className="mb-6 text-2xl font-bold">
+        <BackButton />
+        <h1 className="mt-6 text-2xl font-bold">
           Nenhum filme encontrado para `{q}`.
         </h1>
       </main>
@@ -28,7 +30,8 @@ export default async function SearchPage({ searchParams }: Props) {
 
   return (
      <main className="mx-auto max-w-7xl px-4 py-8">
-      <h1 className="mb-6 text-2xl font-bold">
+      <BackButton />
+      <h1 className="mb-6 mt-6 text-2xl font-bold">
         Resultados para `{q}`
       </h1>
 

@@ -13,5 +13,5 @@
 }
 
 body {
-  @apply bg-slate-950 text-white;
+  @apply text-white;
 }

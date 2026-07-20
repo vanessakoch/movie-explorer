@@ -69,6 +69,7 @@ export async function searchMovies(query: string): Promise<Movie[]> {
   }
 }
 
-export function getMovie(id: number) {
-  return apiFetch(`/movie/${id}`);
+export async function getMovie(id: number): Promise<Movie> {
+  const response: Movie = await apiFetch(`/movie/${id}`);
+  return response;
 }

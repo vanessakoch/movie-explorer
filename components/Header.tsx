@@ -25,13 +25,10 @@ export function Header() {
           className="flex items-center text-2xl font-extrabold text-white"
         >
           <Film
+            size={32}
             className="
               mr-3
-              h-7
-              w-7
               text-amber-400
-              sm:h-10
-              sm:w-10
               sm:mr-6
             "
           />
