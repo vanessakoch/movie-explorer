@@ -39,37 +39,22 @@ export async function getNewMovies(): Promise<Movie[]> {
 }
 
 export async function searchMovies(query: string): Promise<Movie[]> {
-  const controller = new AbortController();
+  const data = query.trim();
 
-  const timeout = setTimeout(() => {
-    controller.abort();
-  }, 5000);
-
-  try {
-    const response = await apiFetch<PaginatedResponse<Movie>>(
-      `/search/movie?query=${encodeURIComponent(query)}`,{
-      signal: controller.signal,
-    });
-  
-    if (!response) {
-      throw new Error("Search error.");
-    }
-
-    return response.results
-  } catch (error) {
-    if (error instanceof Error && error.name === "AbortError") {
-      console.error("TMDB takes too long to answer");
-    } else {
-      console.error("Search error:", error);
-    }
-
+  if (!data) {
     return [];
-  } finally {
-    clearTimeout(timeout);
   }
+
+  const response = await apiFetch<PaginatedResponse<Movie>>(
+    `/search/movie?query=${encodeURIComponent(data)}`
+  );
+
+  return response.results;  
 }
 
 export async function getMovie(id: number): Promise<Movie> {
-  const response: Movie = await apiFetch(`/movie/${id}`);
+  const response: Movie = await apiFetch(`/movie/${id}`, {
+    revalidate: 3600}
+  );
   return response;
 }

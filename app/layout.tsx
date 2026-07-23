@@ -24,10 +24,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
           <div className="
-            min-h-screen
-            bg-linear-to-b
-            from-zinc-900
-            to-black">
+            bg-zinc-900
+            ">
             {children}
           </div>
       </body>

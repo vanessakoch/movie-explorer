@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { Movie } from "@/types/movie";
 import { EmptyPoster } from "./EmptyPoster";
 import Link from "next/link";
+import { FavoriteButton } from "./FavoriteButton";
 
 interface MovieCardProps {
   movie: Movie;
@@ -9,7 +12,6 @@ interface MovieCardProps {
 
 export function MovieCard({ movie }: MovieCardProps) {
   return (
-    <Link href={`/movie/${movie.id}`}>
       <div
         className="
           snap-start
@@ -20,14 +22,15 @@ export function MovieCard({ movie }: MovieCardProps) {
           lg:w-56
           overflow-hidden
           rounded-xl
-          bg-zinc-900
+          bg-zinc-800
           shadow-md
           transition-shadow
-          duration-300
           hover:shadow-xl
+          duration-300
           mb-6
         "
       >
+      <Link href={`/movie/${movie.id}`}>
         <div className="relative aspect-2/3 overflow-hidden rounded-xl">
           {movie.poster_path ? (
             <Image
@@ -47,18 +50,19 @@ export function MovieCard({ movie }: MovieCardProps) {
           <EmptyPoster />
         )}
         </div>
+      </Link>
 
-        <div className="p-3">
-          <h3 className="line-clamp-2 min-h-12 text-base font-semibold text-white">
-            {movie.title}
-          </h3>
-
-          <div className="flex mb-1 items-center justify-between text-sm text-zinc-400">
-            <span>⭐ {movie.vote_average.toFixed(1)}</span>
-            <span>{movie.release_date.substring(0, 4)}</span>
-          </div>
+      <div className="p-3">
+        <h3 className="line-clamp-2 min-h-12 text-base font-semibold text-white">
+          {movie.title}
+        </h3>
+        
+        <div className="flex mb-1 items-center justify-between text-sm text-zinc-400">
+          <span>⭐ {movie.vote_average.toFixed(1)}</span>
+          <span>{movie.release_date.substring(0, 4)}</span>
+          <FavoriteButton movie={movie} />
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

@@ -1,9 +1,8 @@
 import { BackButton } from "@/components/BackButton";
 import { EmptyPoster } from "@/components/EmptyPoster";
+import { FavoriteButton } from "@/components/FavoriteButton";
 import { getMovie } from "@/services/tmdb";
-import { ArrowLeft, ArrowLeftCircle } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 type Props = {
   params: {
@@ -42,9 +41,12 @@ export default async function MovieDetail({ params }: Props) {
             {movie.title}
           </h1>
 
-          <span className="mt-3 text-zinc-400">
-            ⭐ {movie.vote_average}
-          </span>
+          <div className="mt-3 flex items-center gap-3 text-zinc-400">
+            <span>⭐ {movie.vote_average}</span>
+
+            <FavoriteButton movie={movie} />
+            <p>Favoritos</p>
+          </div>
 
           <div className="flex flex-wrap gap-2">
             {movie.genres?.map((genre) => (
