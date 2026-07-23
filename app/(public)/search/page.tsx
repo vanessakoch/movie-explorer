@@ -19,11 +19,14 @@ export default async function SearchPage({ searchParams }: Props) {
 
   if (movies.length === 0 || !movies.length) {
     return (
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <BackButton />
-        <h1 className="mt-6 text-2xl font-bold">
-          Nenhum filme encontrado para `{q}`.
-        </h1>
+      <main className="min-h-[calc(100vh-4rem)] bg-zinc-900">
+        <div className="mx-auto max-w-7xl px-4 py-8">
+          <BackButton />
+
+          <h1 className="mt-6 text-2xl font-bold">
+            Nenhum filme encontrado para `{q}`.
+          </h1>
+        </div>
       </main>
     );
   }
