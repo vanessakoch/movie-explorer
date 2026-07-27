@@ -6,7 +6,7 @@ O projeto permite explorar diferentes categorias de filmes, realizar buscas, vis
 
 ## 🚀 Demonstração
 
-🔗 [Acesse o Movie Explorer](https://movie-explorer-dv09nisx5-vahnkoch-3682s-projects.vercel.app/)
+🔗 [Acesse o Movie Explorer](https://movie-explorer-five-alpha.vercel.app/)
 
 📸 **Preview:** 
 
