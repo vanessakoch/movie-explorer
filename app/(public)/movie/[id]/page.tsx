@@ -20,8 +20,21 @@ export default async function MovieDetail({ params }: Props) {
   const movie = await getMovie(id);
 
   return (
-    <main className="py-8 px-13 gap-2">
+    <main className="relative overflow-hidden px-6 py-8 md:px-12">
       <BackButton />
+
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {movie.backdrop_path && (
+          <Image
+            src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}
+            alt=""
+            fill
+            className="object-cover opacity-30"
+          />
+        )}
+
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/50 via-zinc-950/80 to-zinc-950" />
+      </div>
 
       <section className="mx-auto flex max-w-6xl flex-col gap-8 p-8 md:flex-row sm:items-center">
           {movie.poster_path ? (
