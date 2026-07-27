@@ -58,7 +58,7 @@ npm install
 Crie um arquivo `.env.local` na raiz do projeto e adicione sua chave da API do TMDB:
 
 ```env
-TMDB_TOKEN=seu_token_aqui
+TMDB_API_TOKEN=seu_token_aqui
 ```
 
 Execute o projeto em ambiente de desenvolvimento:
