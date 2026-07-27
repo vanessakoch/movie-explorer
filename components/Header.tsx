@@ -1,10 +1,10 @@
-import { Film } from "lucide-react";
+import { Film, Heart } from "lucide-react";
 import { SearchInput } from "./SearchInput";
 import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="bg-zinc-900 border-b border-zinc-700">
+    <header className="border-b border-zinc-700">
       <div className="
         mx-auto
         flex
@@ -35,10 +35,21 @@ export function Header() {
           <span>Movie Explorer</span>
         </Link>
 
-        <nav className="flex gap-3 font-medium text-white sm:gap-6 sm:text-base">
-          <SearchInput />
-          <a className="mt-2" href="#">Favoritos</a>
-        </nav>
+        <nav className="flex items-center gap-5 font-medium text-white">
+        <SearchInput />
+
+        <Link
+          href="/favorites"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 transition hover:bg-white/10"
+        >
+          <Heart
+            size={18}
+            className="text-red-500"
+            fill="currentColor"
+          />
+          <span>Favoritos</span>
+        </Link>
+      </nav>
 
       </div>
     </header>

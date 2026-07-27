@@ -20,10 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={inter.className}>
+    <html lang="pt-BR" className="bg-zinc-900">
+      <body className={inter.className} >
         <Header />
-          <div className="bg-zinc-900">
+          <div>
             {children}
           </div>
       </body>

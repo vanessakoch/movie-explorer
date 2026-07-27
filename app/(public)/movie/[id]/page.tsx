@@ -20,7 +20,7 @@ export default async function MovieDetail({ params }: Props) {
   const movie = await getMovie(id);
 
   return (
-    <main className="bg-zinc-900 py-8 px-13 gap-2">
+    <main className="py-8 px-13 gap-2">
       <BackButton />
 
       <section className="mx-auto flex max-w-6xl flex-col gap-8 p-8 md:flex-row sm:items-center">
@@ -30,6 +30,7 @@ export default async function MovieDetail({ params }: Props) {
               alt={movie.title}
               width={300}
               height={450}
+              priority
               className="rounded-xl"
             />
           ):(

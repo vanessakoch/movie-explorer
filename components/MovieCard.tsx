@@ -38,6 +38,7 @@ export function MovieCard({ movie }: MovieCardProps) {
               alt={movie.title}
               width={500}
               height={750}
+              loading="eager"
               className="
                 w-full
                 object-cover
@@ -57,7 +58,7 @@ export function MovieCard({ movie }: MovieCardProps) {
           {movie.title}
         </h3>
         
-        <div className="flex mb-1 items-center justify-between text-sm text-zinc-400">
+        <div className="flex mb-1 mt-2 items-center justify-between text-sm text-zinc-400">
           <span>⭐ {movie.vote_average.toFixed(1)}</span>
           <span>{movie.release_date.substring(0, 4)}</span>
           <FavoriteButton movie={movie} />
