@@ -42,31 +42,36 @@ export default async function MovieDetail({ params }: Props) {
             {movie.title}
           </h1>
 
-          <div className="mt-3 flex items-center gap-3 text-zinc-400">
-            <span>⭐ {movie.vote_average}</span>
+          <div className="mt-5 flex flex-wrap items-center gap-4">
+            <span className="flex items-center gap-2 rounded-full bg-zinc-800 px-4 py-2 text-sm text-zinc-200">
+              ⭐ {movie.vote_average.toFixed(1)}
+            </span>
 
-            <FavoriteButton movie={movie} />
-            <p>Favoritos</p>
+            <div className="flex items-center gap-2 text-sm text-zinc-400">
+              <FavoriteButton movie={movie} />
+              <span>Favorito</span>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {movie.genres?.map((genre) => (
-                <div key={genre.id} 
-                  className="
-                    px-3
-                    py-1
-                    mt-6
-                    bg-purple-400 
-                    rounded-full 
-                    text-gray-800
-                  ">
-                  <p>{genre.name}</p>
-                </div>
-              ))}
+              <span
+                key={genre.id}
+                className="rounded-full bg-purple-500/20 px-3 py-1 text-sm font-medium text-purple-300"
+              >
+                {genre.name}
+              </span>
+            ))}
           </div>
-            <p className="mt-6 leading-7 text-zinc-300">
-              {movie.overview}
-            </p>
+            <div className="mt-8">
+              <h2 className="mb-3 text-lg font-semibold text-white">
+                Sinopse
+              </h2>
+
+              <p className="leading-7 text-zinc-300">
+                {movie.overview || "Sinopse não disponível."}
+              </p>
+            </div>
         </div>
       </section>
     </main>
