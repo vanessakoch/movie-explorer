@@ -26,10 +26,10 @@ export default function Favorite() {
   }
 
   return (
-    <main className="py-8 px-13 gap-2">
+    <main className="px-4 py-8 md:px-12">
       <BackButton />
 
-      <div className="grid grid-cols-5 gap-6 sm:grid-cols-3 lg:grid-cols-5 m-12">
+      <div className="ml-12 grid grid-cols-2 gap-4 sm:m-12 sm:gap-6 lg:grid-cols-5">
         {favorites.map((movie) => (
           <MovieCard
             key={movie.id}
