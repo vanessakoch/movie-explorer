@@ -1,14 +1,29 @@
 # Movie Explorer 🎬
 
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 Aplicação web para descoberta de filmes, desenvolvida com **Next.js**, **TypeScript** e **Tailwind CSS**, utilizando a API do **TMDB** para buscar e exibir informações sobre filmes.
 
-O projeto permite explorar diferentes categorias de filmes, realizar buscas, visualizar detalhes e criar uma lista de filmes favoritos.
+O projeto permite explorar filmes por categorias, realizar buscas em tempo real, visualizar detalhes completos e criar uma lista de favoritos persistida no navegador.
 
 ## 🚀 Demonstração
 
 🔗 [Acesse o Movie Explorer](https://movie-explorer-five-alpha.vercel.app/)
 
 📸 **Preview:** 
+
+<p align="center">
+  <img src="./assets/details.png" width="31%">
+</p>
+
+<p align="center">
+  <img src="./assets/home.png" width="31%">
+  <img src="./assets/search.png" width="31%">
+</p>
 
 ## ✨ Funcionalidades
 
@@ -30,10 +45,14 @@ O projeto permite explorar diferentes categorias de filmes, realizar buscas, vis
 * **Tailwind CSS**
 * **TMDB API**
 * **LocalStorage**
+* **ESlint**
 
-## 📂 Estrutura
+## 📁 Arquitetura
 
-O projeto utiliza componentes reutilizáveis e hooks customizados para organizar a aplicação e separar responsabilidades.
+- Componentes reutilizáveis
+- Hooks customizados
+- Consumo da API do TMDB
+- Persistência dos favoritos com LocalStorage
 
 ## ⚙️ Como executar o projeto
 
@@ -73,6 +92,6 @@ Acesse:
 http://localhost:3000
 ```
 
-## 📌 Sobre o projeto
+## 📄 Licença
 
-Este projeto foi desenvolvido como parte do meu portfólio para praticar e demonstrar conhecimentos em desenvolvimento frontend utilizando **React**, **Next.js** e **TypeScript**, incluindo consumo de API, componentização, hooks customizados, gerenciamento de estado e persistência de dados no navegador.
+Este projeto está sob a licença MIT.
